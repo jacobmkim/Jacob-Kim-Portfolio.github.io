@@ -1,14 +1,24 @@
+/* General Styles */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #1e1e1e;
-  color: #fff;
+  color: #e6e6e6; /* Softer text color for readability */
+  line-height: 1.6; /* Improved line spacing */
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
+h2 {
+  font-size: 2em;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+/* Header Styles */
 header {
   background-color: #2c2c2c;
-  padding: 10px 20px;
+  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,27 +34,83 @@ header ul {
 
 header ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #b3b3b3; /* Softer gray */
   font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+header ul li a:hover {
+  color: #fff; /* Bright white on hover */
+  text-decoration: underline;
+}
+
+header ul li a:focus {
+  outline: 2px solid #2aa846;
+  outline-offset: 2px;
+}
+
+.social-icons {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .social-icons img {
-  width: 20px;
-  margin-left: 15px;
+  width: 35px; /* Larger icon size */
+  height: 35px;
+  cursor: pointer;
+  border-radius: 8px; /* Rounded corners for modern look */
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.social-icons img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2); /* Slightly brighten the icon */
+}
+
+/* Link Styles */
+a {
+  color: #5b9bd5; /* Lighter blue for default state */
+  text-decoration: none; /* Remove underlines */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: #4a90e2; /* Brighter blue on hover */
+  text-decoration: underline; /* Add an underline for emphasis */
+}
+
+a:focus {
+  outline: 2px solid #5b9bd5; /* Blue outline for focused links */
+  outline-offset: 2px;
+}
+
+/* Specific Styling for Contact Section Links */
+#contact a {
+  color: #77bdfb; /* Even lighter blue specific to the contact section */
+}
+
+#contact a:hover {
+  color: #5ba9e6; /* Slightly darker hover effect */
+  text-decoration: underline;
+}
+
+/* Home Section */
 #home {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 20px;
+  padding: 20px 20px; /* More space for breathing */
 }
 
 .intro {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
   max-width: 1200px;
+  flex-wrap: wrap;
 }
 
 .intro-text {
@@ -57,7 +123,6 @@ header ul li a {
 }
 
 .intro-text p {
-  line-height: 1.6;
   margin-bottom: 30px;
 }
 
@@ -70,31 +135,97 @@ header ul li a {
   font-weight: bold;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
   background-color: #249639;
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.cta-button:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 .intro-image img {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 250px; /* Adjust size */
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto; /* Center image */
 }
 
-#recent-work, #contact {
+#recent-work {
   text-align: center;
-  padding: 30px 20px;
+  padding: 50px 20px;
+  margin: 20px auto;
+  max-width: 900px; /* Center and limit section width */
+  background-color: #242424;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; /* Rounded corners */
 }
 
-h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+#contact {
+  text-align: center;
+  padding: 10px 20px;
+  margin: 20px auto;
+  max-width: 900px; /* Center and limit section width */
+  background-color: #242424;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; /* Rounded corners */
 }
 
+/* Footer Styles */
 footer {
   background-color: #2c2c2c;
   color: white;
   text-align: center;
   padding: 10px 0;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  header ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 2.5em;
+  }
+
+  .intro-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text h1 {
+    font-size: 2em;
+  }
+
+  .intro-image img {
+    width: 100px;
+    height: 100px;
+  }
 }
