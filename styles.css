@@ -156,6 +156,23 @@ a:focus {
   margin-bottom: 40px;
   color: #ffffff;
 }
+/* Specific styling for Weather App images */
+.project-container:first-of-type .project-image img {
+  width: 50%; /* Make the images smaller */
+  max-width: 400px; /* Set a maximum width */
+  margin: 0 auto; /* Center the images horizontally */
+  border-radius: 8px; /* Keep rounded corners */
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Hover effect remains */
+}
+
+.project-container:first-of-type .project-image {
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  align-items: center; /* Align smaller images to the center */
+  gap: 20px; /* Space between images */
+}
+
 
 .project-container {
   display: flex;
@@ -163,27 +180,25 @@ a:focus {
   align-items: center;
   gap: 40px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto;
   flex-wrap: wrap;
 }
 
-/* Project Image */
 .project-image {
-  display: block;
-  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction:row; /* Stack images vertically */
+  gap: 20px; /* Spacing between images */
   max-width: 500px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.3s ease; /* Scale the container itself */
 }
 
 .project-image img {
   width: 100%;
-  display: block;
+  height: auto;
+  border-radius: 8px; /* Rounded corners for the images */
   object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
 }
-
 .project-image:hover {
   transform: scale(1.1); /* Enlarge the container smoothly */
 }
@@ -210,7 +225,7 @@ a:focus {
 /* Contact Section */
 #contact {
   text-align: center;
-  padding: 50px 20px;
+  padding: 5px 20px;
   background-color: #2c2c2c;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
